@@ -46,3 +46,15 @@ button{
   display: flex;
   justify-content: center;
 }
+.loading-panel-wrapper{
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 22, 68, 0.527);
+  color: #E5E7E9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
