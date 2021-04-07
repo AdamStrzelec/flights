@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import InputDataPanel from '../InputDataPanel/InputDataPanel';
+import { getData } from '../../utils/getData/getData';
 
 const FlightsContainer = () => {
 
-    const [isLoadingData, setLoadingData] = useState(false);
+    const [isLoadingData, setIsLoadingData] = useState(false);
+    const [geolocations, setGeolocations] = useState([]);
     
-    const getData = (inputValue) => {
-        
+    const handleData = (inputUrl) => {
+        setIsLoadingData(true);
+        getData(inputUrl, setIsLoadingData, setGeolocations)
     }
 
     return(
         <>
-            <InputDataPanel handleClick={getData}/>
+            <InputDataPanel handleClick={handleData}/>
         </>
     )
 }
