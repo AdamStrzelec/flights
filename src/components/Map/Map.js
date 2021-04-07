@@ -11,12 +11,7 @@ const center = {
   lng: 17.18142
 };
 
-const flightPlanCoordinates = [
-    { lat: 51.11520, lng: 17.18142 },
-    { lat: 51.21816, lng: 18.15257 }
-];
-
-function Map() {
+const Map = ({ geolocations }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: `${process.env.REACT_APP_MAP_KEY}`
@@ -43,13 +38,16 @@ function Map() {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        <Polyline 
-            path = {flightPlanCoordinates}
+        {geolocations.length>0 &&
+          <Polyline 
+            path = {geolocations}
             geodesic = {true}
             options={{strokeColor: '#00FF00',strokeWeight: 2}}
             strokeOpacity = {1.0}
             strokeWeight = {2}
-        />
+          />
+        }
+
         <></>
       </GoogleMap>
   ) : <></>
