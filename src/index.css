@@ -24,7 +24,7 @@ input{
   background-color: #E5E8E8;
   padding-left: 5px;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 button{
@@ -35,9 +35,14 @@ button{
   color: white;
   background-color: #2980B9;
   cursor: pointer;
+  margin-right: 5px;
 }
 
 .input-data-wrapper{
   text-align: center;
   padding: 15px 0;
+}
+.map-wrapper{
+  display: flex;
+  justify-content: center;
 }

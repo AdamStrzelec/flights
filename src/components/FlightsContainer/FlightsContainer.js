@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputDataPanel from '../InputDataPanel/InputDataPanel';
 import { getData } from '../../utils/getData/getData';
+import Map from '../Map/Map';
 
 const FlightsContainer = () => {
 
@@ -15,6 +16,7 @@ const FlightsContainer = () => {
     return(
         <>
             <InputDataPanel handleClick={handleData}/>
+            <Map geolocations={geolocations}/>
         </>
     )
 }
