@@ -1,9 +1,10 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader, Polyline, Marker } from '@react-google-maps/api';
+import PropTypes from 'prop-types';
 
 const containerStyle = {
-  width: '700px',
-  height: '700px'
+  width: '750px',
+  height: '650px'
 };
 
 const Map = ({ geolocations }) => {
@@ -67,6 +68,13 @@ const Map = ({ geolocations }) => {
       </GoogleMap>
     </div>
   ) : <></>
+}
+
+Map.propTypes = {
+  geolocations: PropTypes.arrayOf(PropTypes.shape({
+    lat: PropTypes.number,
+    lng: PropTypes.number
+  }))
 }
 
 export default React.memo(Map)

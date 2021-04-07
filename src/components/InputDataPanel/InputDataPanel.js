@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const InputDataPanel = ({handleClick}) => {
+const InputDataPanel = ({ handleClick }) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -15,6 +16,10 @@ const InputDataPanel = ({handleClick}) => {
             <button onClick={()=>handleClick(inputValue)}>Pobierz dane</button>
         </div>
     )
+}
+
+InputDataPanel.propTypes = {
+    handleClick: PropTypes.func
 }
 
 export default InputDataPanel;
